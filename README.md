@@ -8,7 +8,7 @@ A simple web stack that uses:
 
 **G** [GO](https://go.dev).
 
-**B** [HTMX](https://htmx.org).
+**H** [HTMX](https://htmx.org).
 
 **L** [Lua](https://lua.org).
 
