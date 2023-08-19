@@ -1,6 +1,7 @@
 # baghl
 
 A simple web stack that uses:
+
 **B** [BulmaCSS](https://bulma.io).
 
 **A** [AlpineJS](https://alpinejs.dev).
