@@ -19,11 +19,11 @@ func Loader(L *lua.LState) int {
 }
 
 var exports = map[string]lua.LGFunction{
-	"HTMLresponse": HTMLresponse,
-	"redirect":     redirect,
-	"JSONresponse": JSONresponse,
-	"Fileresponse": FileResponse,
-	"Textresponse": TextResponse,
+	"HTMLResponse": HTMLResponse,
+	"Redirect":     Redirect,
+	"JSONResponse": JSONResponse,
+	"FileResponse": FileResponse,
+	"TextResponse": TextResponse,
 }
 
 func RenderTemplate(file string, data lua.LTable) string {
@@ -44,7 +44,7 @@ func RenderTemplate(file string, data lua.LTable) string {
 	return result
 }
 
-func HTMLresponse(L *lua.LState) int {
+func HTMLResponse(L *lua.LState) int {
 	header := L.ToTable(1)
 	file := L.ToString(2)
 	data := L.ToTable(3)
@@ -63,7 +63,7 @@ func HTMLresponse(L *lua.LState) int {
 	return 1
 }
 
-func redirect(L *lua.LState) int {
+func Redirect(L *lua.LState) int {
 	route := L.ToString(1)
 
 	table := L.NewTable()
@@ -75,7 +75,7 @@ func redirect(L *lua.LState) int {
 	return 1
 }
 
-func JSONresponse(L *lua.LState) int {
+func JSONResponse(L *lua.LState) int {
 	header := L.ToTable(1)
 	body := L.ToTable(2)
 	statusCode := L.ToNumber(3)
